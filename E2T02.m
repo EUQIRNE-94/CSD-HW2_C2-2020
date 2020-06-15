@@ -4,7 +4,7 @@ close all
 clear
 clc
 
-%% Sistema Transmisor de Rossler
+%% Sistema Transmisor de Rossler con método de identificcion de parametros lineal
 
 tspan = [0 200];
 dt = 0.1;
@@ -17,14 +17,14 @@ for i = 1:n
   lambda(i) = LAMBDA(tL(i));
 end
 
-% Sistema de Rossler con cambio de variables y observador parcial
+% Sistema de Rossler con cambio de variables
 x0_R = [1,1,log(1),0,0,0,0,0,0,0,0,0,0,rand()];
 [t,x] = ode45(@(t,x)lambdaRossler(t,x),tspan,x0_R);
-
 x(:,3) = exp(x(:,3));
 
 % Figuras Rossler con cambio de variables
 figure(1)
+set(gcf, 'Position', get(0, 'Screensize'));
 subplot(3,1,1)
 plot(t,x(:,1),'k','linewidth',2);
 title('$x_1$','Interpreter','latex','fontsize',30)
@@ -43,32 +43,44 @@ title({'$Senal - x_3$'},'Interpreter','latex','fontsize',30)
 xlabel('Tiempo [t]')
 ylabel('Uds')
 
+set(gca,'LooseInset',get(gca,'TightInset'));
+saveas(gcf,'E2_estados.png')
+
 % Retrato Fase
 figure(2)
-plot3(x(:,1),x(:,2),x(:,3),'k','linewidth',3)
+set(gcf, 'Position', get(0, 'Screensize'));
+plot3(x(:,1),x(:,2),x(:,3),'k','linewidth',1)
 grid on
 title('Retrato Fase Sistema','fontsize',30)
 xlabel({'$x_1$'},'Interpreter','latex','fontsize',20)
 ylabel({'$x_2$'},'Interpreter','latex','fontsize',20)
 zlabel({'$x_3$'},'Interpreter','latex','fontsize',20)
+set(gca,'LooseInset',get(gca,'TightInset'));
+saveas(gcf,'E2_retratofase.png')
 
 % Lambda
 figure(3)
+set(gcf, 'Position', get(0, 'Screensize'));
 plot(tL,lambda,'g','linewidth',2); hold on; grid on
 plot(t,x(:,13),'k','linewidth',2)
-title('Retrato Fase Sistema','fontsize',30)
-xlabel({'$x_1$'},'Interpreter','latex','fontsize',20)
-ylabel({'$x_2$'},'Interpreter','latex','fontsize',20)
+title('$\lambda \ y \ \hat{\lambda}$','interpreter','latex','fontsize',30)
+xlabel({'Tiempo $t$'},'Interpreter','latex','fontsize',20)
+ylabel({'$\lambda \ / \ \hat{\lambda}$'},'Interpreter','latex','fontsize',20)
 legend({'$\lambda$','$\hat{\lambda}$'},'interpreter','latex','fontsize',16)
+set(gca,'LooseInset',get(gca,'TightInset'));
+saveas(gcf,'E2_lambda.png')
 
 % Error de Lambda
 lambdaI = interp1(t,x(:,13),tL);
 eL = lambda - lambdaI;
 figure(4)
+set(gcf, 'Position', get(0, 'Screensize'));
 plot(tL,eL,'g','linewidth',2); grid on
 title('Error de \lambda','fontsize',30)
 xlabel({'Tiempo $t$'},'Interpreter','latex','fontsize',20)
 ylabel({'$error$'},'Interpreter','latex','fontsize',20)
+set(gca,'LooseInset',get(gca,'TightInset'));
+saveas(gcf,'E2_errorlambda.png')
 
 
 %% Funciones
