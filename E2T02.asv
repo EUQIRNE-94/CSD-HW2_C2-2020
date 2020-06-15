@@ -18,7 +18,7 @@ for i = 1:n
 end
 
 % Sistema de Rossler con cambio de variables y observador parcial
-x0_R = [1,1,log(1),0,0,0,0,0,0,0,0,0,0,rand()];
+x0_R = [1,1,log(1),0,0,0,0,0,0,0,0,0,0,0];
 [t,x] = ode45(@(t,x)lambdaRossler(t,x),tspan,x0_R);
 
 x(:,3) = exp(x(:,3));
@@ -55,20 +55,7 @@ zlabel({'$x_3$'},'Interpreter','latex','fontsize',20)
 % Lambda
 figure(3)
 plot(tL,lambda,'g','linewidth',2); hold on; grid on
-plot(t,x(:,13),'k','linewidth',2)
-title('Retrato Fase Sistema','fontsize',30)
-xlabel({'$x_1$'},'Interpreter','latex','fontsize',20)
-ylabel({'$x_2$'},'Interpreter','latex','fontsize',20)
-legend({'$\lambda$','$\hat{\lambda}$'},'interpreter','latex','fontsize',16)
-
-% Error de Lambda
-lambdaI = interp1(t,x(:,13),tL);
-eL = lambda - lambdaI;
-figure(4)
-plot(tL,eL,'g','linewidth',2); grid on
-title('Error de \lambda','fontsize',30)
-xlabel({'Tiempo $t$'},'Interpreter','latex','fontsize',20)
-ylabel({'$error$'},'Interpreter','latex','fontsize',20)
+plot(t,x(:,14),'k','linewidth',2)
 
 
 %% Funciones
@@ -110,13 +97,9 @@ p = x(14);
 
 dx(4) = w02;
 dx(5) = w03;
-dx(6) = -k0*w01 -k1*w02 - k2*w03 + y;
-dx(7) = w12;
-dx(8) = w13;
-dx(9) = -k0*w11 -k1*w12 - k2*w13 + u1;
-dx(10) = w22;
-dx(11) = w23;
-dx(12) = -k0*w21 -k1*w22 - k2*w23 + u2;
+dx(6) = -k0*
+dx(7:9) = K*[w11,w12,w13]' + L*u1;
+dx(10:12) = K*[w21,w22,w23]' + L*u2;
 
 phi0 = k0*w01 + (k1 - 1)*w02 + k2*w03 + w12 + w21 + w23;
 phi1 = w03 - w11 - w22;
