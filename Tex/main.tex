@@ -1,0 +1,56 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=0.75in]{geometry}
+\geometry{a4paper}
+\usepackage[T1]{fontenc} 				% Support Icelandic Characters
+\usepackage[utf8]{inputenc} 			% Support Icelandic Characters
+\usepackage{graphicx} 					% Support for including images
+\usepackage{hyperref} 					% Support for hyperlinks
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{enumerate}
+\usepackage{tcolorbox}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage[spanish]{babel}
+
+%------------------------------------------------------------------
+% TITULO
+%------------------------------------------------------------------
+
+\title{
+\centerline{\includegraphics[width=50mm]{img/Cinvestav-logo.png}}
+\vspace{0.25 cm}
+Cooperación de Sistemas Dinámicos\\
+\large Tarea 2\\
+
+\small CINVESTAV  - unidad Saltillo
+}
+
+\author{Enrique Benavides Téllez}
+
+\date{26 de junio del 2020}
+
+
+%------------------------------------------------------------------
+% DOCUMENTO
+%------------------------------------------------------------------
+\begin{document}
+\maketitle
+\input{secciones/01_abs.tex}
+\input{secciones/02_cont.tex}
+%\input{secciones/03_met.tex}
+%\input{secciones/04_res.tex}
+\input{secciones/05_conc.tex}
+
+
+% References
+\clearpage
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{document}
+
+% Apendice
+\clearpage
+\input{secciones/06_ap.tex}
+\end{document}
