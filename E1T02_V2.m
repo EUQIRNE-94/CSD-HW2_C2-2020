@@ -100,28 +100,114 @@ figure(1)
 % Estado 1
 subplot(3,1,1)
 plot(tspan,x(1,1:n),'k','linewidth',4);hold on;grid on
-plot(tspan,xg_k(1,1:n),'r','linewidth',3)
 plot(tspan,xg(1,1:n),'g','linewidth',2)
+title('Estado $x_1$','interpreter','latex','fontsize',30)
+xlabel({'Tiempo $t$'},'Interpreter','latex','fontsize',20)
+ylabel({'$x_1$'},'Interpreter','latex','fontsize',20)
+legend({'Sistema','Observador',},'fontsize',16)
 
 % Estado 2
 subplot(3,1,2)
-plot(tspan,x(2,1:n),'k','linewidth',4);hold on
-plot(tspan,xg_k(2,1:n),'r','linewidth',3)
+plot(tspan,x(2,1:n),'k','linewidth',4);hold on; grid on
 plot(tspan,xg(2,1:n),'g','linewidth',2)
+title('Estado $x_2$','interpreter','latex','fontsize',30)
+xlabel({'Tiempo $t$'},'Interpreter','latex','fontsize',20)
+ylabel({'$x_2$'},'Interpreter','latex','fontsize',20)
+legend({'Sistema','Observador',},'fontsize',16)
 
 % Estado 3
 subplot(3,1,3)
-plot(tspan,x(3,1:n),'k','linewidth',4);hold on
-plot(tspan,xg_k(3,1:n),'r','linewidth',3)
+plot(tspan,x(3,1:n),'k','linewidth',4);hold on; grid on
 plot(tspan,xg(3,1:n),'g','linewidth',2)
+title('Estado $x_3$','interpreter','latex','fontsize',30)
+xlabel({'Tiempo $t$'},'Interpreter','latex','fontsize',20)
+ylabel({'$x_3$'},'Interpreter','latex','fontsize',20)
+legend({'Sistema','Observador',},'fontsize',16)
+
+% Errores
+figure(2)
+plot(tspan,e1,'r','linewidth',2); hold on; grid on
+plot(tspan,e2(1:n),'g','linewidth',2)
+plot(tspan,e3(1:n),'b','linewidth',2)
+title('Errores','interpreter','latex','fontsize',30)
+xlabel({'Tiempo $t$'},'Interpreter','latex','fontsize',20)
+ylabel({'$e_i$'},'Interpreter','latex','fontsize',20)
+legend({'e_1','e_2','e_3'},'fontsize',16)
+
+% % Ganancias K
+% figure(3)
+% plot(tspan,K(1,:),'r','linewidth',2); hold on; grid on
+% plot(tspan,K(2,:),'g','linewidth',2)
+% plot(tspan,K(3,:),'b','linewidth',2)
+% title('Ganancias','interpreter','latex','fontsize',30)
+% xlabel({'Tiempo $t$'},'Interpreter','latex','fontsize',20)
+% ylabel({'$k_i$'},'Interpreter','latex','fontsize',20)
+% legend({'k_1','k_2','k_3'},'fontsize',16)
 
 % Retrato Fase
 figure(5)
-plot3(x(1,:),x(2,:),x(3,:),'k','linewidth',4); hold on
-plot3(xg_k(1,:),xg_k(2,:),xg_k(3,:),'r','linewidth',3); hold on
+plot3(x(1,:),x(2,:),x(3,:),'k','linewidth',4); hold on; grid on
 plot3(xg(1,:),xg(2,:),xg(3,:),'g','linewidth',2)
-% plot3(x_L(:,1),x_L(:,2),x_L(:,3),'b','linewidth',1)
-grid on
+title('Retrato Fase','fontsize',30)
+xlabel({'$x_1$'},'Interpreter','latex','fontsize',20)
+ylabel({'$x_2$'},'Interpreter','latex','fontsize',20)
+zlabel({'$x_3$'},'Interpreter','latex','fontsize',20)
+legend({'Sistema','Observador',},'fontsize',16)
+
+%% Figuras sistema continuo
+figure(6)
+% Estado 1
+subplot(3,1,1)
+plot(t_L,x_L(:,1),'k','linewidth',4);hold on;grid on
+plot(t_L,x_L(:,4),'g','linewidth',2);
+title('Estado $x_1$','interpreter','latex','fontsize',30)
+xlabel({'Tiempo $t$'},'Interpreter','latex','fontsize',20)
+ylabel({'$x_1$'},'Interpreter','latex','fontsize',20)
+legend({'Sistema','Observador',},'fontsize',16)
+
+% Estado 2
+subplot(3,1,2)
+plot(t_L,x_L(:,2),'k','linewidth',4);hold on;grid on
+plot(t_L,x_L(:,5),'g','linewidth',2);
+title('Estado $x_2$','interpreter','latex','fontsize',30)
+xlabel({'Tiempo $t$'},'Interpreter','latex','fontsize',20)
+ylabel({'$x_2$'},'Interpreter','latex','fontsize',20)
+legend({'Sistema','Observador',},'fontsize',16)
+
+% Estado 3
+subplot(3,1,3)
+plot(t_L,x_L(:,3),'k','linewidth',4);hold on;grid on
+plot(t_L,x_L(:,6),'g','linewidth',2);
+title('Estado $x_3$','interpreter','latex','fontsize',30)
+xlabel({'Tiempo $t$'},'Interpreter','latex','fontsize',20)
+ylabel({'$x_3$'},'Interpreter','latex','fontsize',20)
+legend({'Sistema','Observador',},'fontsize',16)
+
+% Errores
+e1L = x_L(:,1) - x_L(:,4);
+e2L = x_L(:,2) - x_L(:,5);
+e3L = x_L(:,3) - x_L(:,6);
+
+figure(7)
+plot(t_L,e1L,'r','linewidth',2); hold on; grid on
+plot(t_L,e2L,'g','linewidth',2)
+plot(t_L,e3L,'b','linewidth',2)
+title('Errores','interpreter','latex','fontsize',30)
+xlabel({'Tiempo $t$'},'Interpreter','latex','fontsize',20)
+ylabel({'$e_i$'},'Interpreter','latex','fontsize',20)
+legend({'e_1','e_2','e_3'},'fontsize',16)
+
+% Retrato Fase
+figure(8)
+plot3(x_L(:,1),x_L(:,2),x_L(:,3),'b','linewidth',1); hold on; grid on
+plot3(x_L(:,4),x_L(:,5),x_L(:,6),'g','linewidth',1);
+title('Retrato Fase','fontsize',30)
+xlabel({'$x_1$'},'Interpreter','latex','fontsize',20)
+ylabel({'$x_2$'},'Interpreter','latex','fontsize',20)
+zlabel({'$x_3$'},'Interpreter','latex','fontsize',20)
+legend({'Sistema','Observador',},'fontsize',16)
+
+
 
 %% Funciones
 % FKE

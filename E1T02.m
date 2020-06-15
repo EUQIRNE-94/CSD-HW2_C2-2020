@@ -10,8 +10,8 @@ clc
 %  mu + sigma*randn() --- Distribucion normal con media = mu y varianza = sigma
 
 % Tiempo de simulación
-tf = 15;
-dt = 0.005;
+tf = 5;
+dt = 0.01;
 tspan = 0:dt:tf;
 n = length(tspan);
 
@@ -64,14 +64,14 @@ for k = 1:n
   c_e1 = covarianza(eps(1,1:k),eps(1,1:k));
   c_e2 = covarianza(eps(2,1:k),eps(2,1:k));
   c_e3 = covarianza(eps(3,1:k),eps(3,1:k));
-  Q(:,:,k) = [c_e1,0,0;0,c_e2,0;0,0,c_e3];
-%   Q(:,:,k) = [sig*sig,0,0;0,sig*sig,0;0,0,sig*sig];
+%   Q(:,:,k) = [c_e1,0,0;0,c_e2,0;0,0,c_e3];
+  Q(:,:,k) = [sig*sig,0,0;0,sig*sig,0;0,0,sig*sig];
   P_k = F*P(:,:,k)*F' + Q(:,:,k);
   
   % Obtener ganancias de Kalman
   H = [1,0,0];
-  R(1,k) = covarianza(v(1,1:k),v(1,1:k));
-%   R(1,k) = sig*sig;
+%   R(1,k) = covarianza(v(1,1:k),v(1,1:k));
+  R(1,k) = sig*sig;
   K(:,k) = P_k*H'*inv( H*P_k*H' + R(1,k) );
   
   % Generar copia del sistema con ganancias de Kalman
@@ -86,16 +86,11 @@ end
 e2 = x(2,:) - xg(2,:);
 e3 = x(3,:) - xg(3,:);
 
-% %% Metodo continuo - Paper
-% global sigma_L r_L b_L
-% 
-% tspan_c = [0 10];
-% sigma_L = 10;
-% r_L = 28;
-% b_L = 8/3;
-% 
-% x0_L = x(:,1)';
-% [t_L,x_L] = ode45(@LORENZ,tspan_c,x0_L);
+%% Metodo continuo - Paper
+tspan_c = [0 tf];
+
+x0_L = [x(1,1),x(2,1),x(3,1),0,0,0,.1,.1,.1,.1,.1,.1,.1,.1,.1];
+[t_L,x_L] = ode45(@LORENZ,tspan_c,x0_L);
 
 %% Figuras
 figure(1)
@@ -136,35 +131,68 @@ xlabel({'Tiempo $t$'},'Interpreter','latex','fontsize',20)
 ylabel({'$e_i$'},'Interpreter','latex','fontsize',20)
 legend({'e_1','e_2','e_3'},'fontsize',16)
 
-% Ganancias K
-figure(3)
-plot(tspan,K(1,:),'r','linewidth',2); hold on; grid on
-plot(tspan,K(2,:),'g','linewidth',2)
-plot(tspan,K(3,:),'b','linewidth',2)
-title('Ganancias','interpreter','latex','fontsize',30)
-xlabel({'Tiempo $t$'},'Interpreter','latex','fontsize',20)
-ylabel({'$k_i$'},'Interpreter','latex','fontsize',20)
-legend({'k_1','k_2','k_3'},'fontsize',16)
-
 % Retrato Fase
-figure(5)
-plot3(x(1,:),x(2,:),x(3,:),'k','linewidth',4); hold on; grid on
-plot3(xg(1,:),xg(2,:),xg(3,:),'g','linewidth',2)
-% plot3(x_L(:,1),x_L(:,2),x_L(:,3),'b','linewidth',1)
+figure(3)
+plot3(x(1,:),x(2,:),x(3,:),'k','linewidth',1); hold on; grid on
+plot3(xg(1,:),xg(2,:),xg(3,:),'g','linewidth',1)
 title('Retrato Fase','fontsize',30)
 xlabel({'$x_1$'},'Interpreter','latex','fontsize',20)
 ylabel({'$x_2$'},'Interpreter','latex','fontsize',20)
 zlabel({'$x_3$'},'Interpreter','latex','fontsize',20)
 legend({'Sistema','Observador',},'fontsize',16)
 
-% % Retrato Fase
-% figure(6)
-% plot3(x_L(:,1),x_L(:,2),x_L(:,3),'b','linewidth',1); hold on; grid on
-% title('Retrato Fase','fontsize',30)
-% xlabel({'$x_1$'},'Interpreter','latex','fontsize',20)
-% ylabel({'$x_2$'},'Interpreter','latex','fontsize',20)
-% zlabel({'$x_3$'},'Interpreter','latex','fontsize',20)
-% legend({'Sistema','Observador',},'fontsize',16)
+%% Figuras sistema continuo
+figure(4)
+% Estado 1
+subplot(3,1,1)
+plot(t_L,x_L(:,1),'k','linewidth',4);hold on;grid on
+plot(t_L,x_L(:,4),'g','linewidth',2);
+title('Estado $x_1$','interpreter','latex','fontsize',30)
+xlabel({'Tiempo $t$'},'Interpreter','latex','fontsize',20)
+ylabel({'$x_1$'},'Interpreter','latex','fontsize',20)
+legend({'Sistema','Observador',},'fontsize',16)
+
+% Estado 2
+subplot(3,1,2)
+plot(t_L,x_L(:,2),'k','linewidth',4);hold on;grid on
+plot(t_L,x_L(:,5),'g','linewidth',2);
+title('Estado $x_2$','interpreter','latex','fontsize',30)
+xlabel({'Tiempo $t$'},'Interpreter','latex','fontsize',20)
+ylabel({'$x_2$'},'Interpreter','latex','fontsize',20)
+legend({'Sistema','Observador',},'fontsize',16)
+
+% Estado 3
+subplot(3,1,3)
+plot(t_L,x_L(:,3),'k','linewidth',4);hold on;grid on
+plot(t_L,x_L(:,6),'g','linewidth',2);
+title('Estado $x_3$','interpreter','latex','fontsize',30)
+xlabel({'Tiempo $t$'},'Interpreter','latex','fontsize',20)
+ylabel({'$x_3$'},'Interpreter','latex','fontsize',20)
+legend({'Sistema','Observador',},'fontsize',16)
+
+% Errores
+e1L = x_L(:,1) - x_L(:,4);
+e2L = x_L(:,2) - x_L(:,5);
+e3L = x_L(:,3) - x_L(:,6);
+
+figure(5)
+plot(t_L,e1L,'r','linewidth',2); hold on; grid on
+plot(t_L,e2L,'g','linewidth',2)
+plot(t_L,e3L,'b','linewidth',2)
+title('Errores','interpreter','latex','fontsize',30)
+xlabel({'Tiempo $t$'},'Interpreter','latex','fontsize',20)
+ylabel({'$e_i$'},'Interpreter','latex','fontsize',20)
+legend({'e_1','e_2','e_3'},'fontsize',16)
+
+% Retrato Fase
+figure(6)
+plot3(x_L(:,1),x_L(:,2),x_L(:,3),'b','linewidth',1); hold on; grid on
+plot3(x_L(:,4),x_L(:,5),x_L(:,6),'g','linewidth',1);
+title('Retrato Fase','fontsize',30)
+xlabel({'$x_1$'},'Interpreter','latex','fontsize',20)
+ylabel({'$x_2$'},'Interpreter','latex','fontsize',20)
+zlabel({'$x_3$'},'Interpreter','latex','fontsize',20)
+legend({'Sistema','Observador',},'fontsize',16)
 
 %% Funciones
 % FKE
@@ -184,15 +212,67 @@ end
 
 % Paper
 function dx = LORENZ(~,x)
-global sigma_L r_L b_L
+
+sigma = 10;
+r = 28;
+b = 8/3;
+sig = 0.01;
 
 x1 = x(1);
 x2 = x(2);
 x3 = x(3);
 
-dx(1) = sigma_L*(x2 - x1);
-dx(2) = r_L*x1 - x2 - x1*x3;
-dx(3) = -b_L*x3 + x1*x2;
+E1 = sig*randn();
+E2 = sig*randn();
+E3 = sig*randn();
+
+dx(1) = sigma*(x2 - x1) + E1;
+dx(2) = r*x1 - x2 - x1*x3 + E2;
+dx(3) = -b*x3 + x1*x2 + E3;
+
+v = sig*randn();
+y = x1 + v;
+
+% Filtro Kalman
+p11 = x(7);
+p12 = x(8);
+p13 = x(9);
+p21 = x(10);
+p22 = x(11);
+p23 = x(12);
+p31 = x(13);
+p32 = x(14);
+p33 = x(15);
+
+P = [p11,p12,p13;p21,p22,p23;p31,p32,p33];
+F = [-sigma,sigma,0 ; r-x3,1,-x1 ; x2,x1,-b];
+H = [1,0,0];
+Q = [sig^2,0,0;0,sig^2,0;0,0,sig^2];
+R = sig^2;
+
+Pp = F*P + P*F' - P*H'*(1/R)*H*P + Q;
+
+dx(7) = Pp(1,1);
+dx(8) = Pp(1,2);
+dx(9) = Pp(1,3);
+dx(10) = Pp(2,1);
+dx(11) = Pp(2,2);
+dx(12) = Pp(2,3);
+dx(13) = Pp(3,1);
+dx(14) = Pp(3,2);
+dx(15) = Pp(3,3);
+
+K = P*[1;0;0]*(1/R);
+
+xg1 = x(4);
+xg2 = x(5);
+xg3 = x(6);
+
+e1 = y - xg1;
+
+dx(4) = sigma*(xg2 - xg1) + K(1)*e1;
+dx(5) = r*xg1 - xg2 - xg1*xg3 + K(2)*e1;
+dx(6) = -b*xg3 + xg1*xg2 + K(3)*e1;
 
 dx = dx';
 end
