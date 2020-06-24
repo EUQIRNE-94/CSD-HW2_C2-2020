@@ -94,6 +94,7 @@ x0_L = [x(1,1),x(2,1),x(3,1),0,0,0,.1,.1,.1,.1,.1,.1,.1,.1,.1];
 
 %% Figuras
 figure(1)
+set(gcf, 'Position', get(0, 'Screensize'));
 % Estado 1
 subplot(3,1,1)
 plot(tspan,x(1,1:n),'k','linewidth',4);hold on;grid on
@@ -121,8 +122,12 @@ xlabel({'Tiempo $t$'},'Interpreter','latex','fontsize',20)
 ylabel({'$x_3$'},'Interpreter','latex','fontsize',20)
 legend({'Sistema','Observador',},'fontsize',16)
 
+set(gca,'LooseInset',get(gca,'TightInset'));
+saveas(gcf,'E1_Estados_Disc.png')
+
 % Errores
 figure(2)
+set(gcf, 'Position', get(0, 'Screensize'));
 plot(tspan,e1,'r','linewidth',2); hold on; grid on
 plot(tspan,e2(1:n),'g','linewidth',2)
 plot(tspan,e3(1:n),'b','linewidth',2)
@@ -131,8 +136,12 @@ xlabel({'Tiempo $t$'},'Interpreter','latex','fontsize',20)
 ylabel({'$e_i$'},'Interpreter','latex','fontsize',20)
 legend({'e_1','e_2','e_3'},'fontsize',16)
 
+set(gca,'LooseInset',get(gca,'TightInset'));
+saveas(gcf,'E1_Errores_Disc.png')
+
 % Retrato Fase
 figure(3)
+set(gcf, 'Position', get(0, 'Screensize'));
 plot3(x(1,:),x(2,:),x(3,:),'k','linewidth',1); hold on; grid on
 plot3(xg(1,:),xg(2,:),xg(3,:),'g','linewidth',1)
 title('Retrato Fase','fontsize',30)
@@ -141,8 +150,12 @@ ylabel({'$x_2$'},'Interpreter','latex','fontsize',20)
 zlabel({'$x_3$'},'Interpreter','latex','fontsize',20)
 legend({'Sistema','Observador',},'fontsize',16)
 
+set(gca,'LooseInset',get(gca,'TightInset'));
+saveas(gcf,'E1_RetratoFase_Disc.png')
+
 %% Figuras sistema continuo
 figure(4)
+set(gcf, 'Position', get(0, 'Screensize'));
 % Estado 1
 subplot(3,1,1)
 plot(t_L,x_L(:,1),'k','linewidth',4);hold on;grid on
@@ -170,12 +183,16 @@ xlabel({'Tiempo $t$'},'Interpreter','latex','fontsize',20)
 ylabel({'$x_3$'},'Interpreter','latex','fontsize',20)
 legend({'Sistema','Observador',},'fontsize',16)
 
+set(gca,'LooseInset',get(gca,'TightInset'));
+saveas(gcf,'E1_Estados_Cont.png')
+
 % Errores
 e1L = x_L(:,1) - x_L(:,4);
 e2L = x_L(:,2) - x_L(:,5);
 e3L = x_L(:,3) - x_L(:,6);
 
 figure(5)
+set(gcf, 'Position', get(0, 'Screensize'));
 plot(t_L,e1L,'r','linewidth',2); hold on; grid on
 plot(t_L,e2L,'g','linewidth',2)
 plot(t_L,e3L,'b','linewidth',2)
@@ -184,8 +201,12 @@ xlabel({'Tiempo $t$'},'Interpreter','latex','fontsize',20)
 ylabel({'$e_i$'},'Interpreter','latex','fontsize',20)
 legend({'e_1','e_2','e_3'},'fontsize',16)
 
+set(gca,'LooseInset',get(gca,'TightInset'));
+saveas(gcf,'E1_Errores_Cont.png')
+
 % Retrato Fase
 figure(6)
+set(gcf, 'Position', get(0, 'Screensize'));
 plot3(x_L(:,1),x_L(:,2),x_L(:,3),'b','linewidth',1); hold on; grid on
 plot3(x_L(:,4),x_L(:,5),x_L(:,6),'g','linewidth',1);
 title('Retrato Fase','fontsize',30)
@@ -193,6 +214,9 @@ xlabel({'$x_1$'},'Interpreter','latex','fontsize',20)
 ylabel({'$x_2$'},'Interpreter','latex','fontsize',20)
 zlabel({'$x_3$'},'Interpreter','latex','fontsize',20)
 legend({'Sistema','Observador',},'fontsize',16)
+
+set(gca,'LooseInset',get(gca,'TightInset'));
+saveas(gcf,'E1_RetratoFase_Cont.png')
 
 %% Funciones
 % FKE

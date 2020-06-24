@@ -44,7 +44,7 @@ xlabel('Tiempo [t]')
 ylabel('Uds')
 
 set(gca,'LooseInset',get(gca,'TightInset'));
-saveas(gcf,'E2_estados.png')
+saveas(gcf,'E2_Estados.png')
 
 % Retrato Fase
 figure(2)
@@ -56,7 +56,7 @@ xlabel({'$x_1$'},'Interpreter','latex','fontsize',20)
 ylabel({'$x_2$'},'Interpreter','latex','fontsize',20)
 zlabel({'$x_3$'},'Interpreter','latex','fontsize',20)
 set(gca,'LooseInset',get(gca,'TightInset'));
-saveas(gcf,'E2_retratofase.png')
+saveas(gcf,'E2_RetratoFase.png')
 
 % Lambda
 figure(3)
@@ -68,7 +68,7 @@ xlabel({'Tiempo $t$'},'Interpreter','latex','fontsize',20)
 ylabel({'$\lambda \ / \ \hat{\lambda}$'},'Interpreter','latex','fontsize',20)
 legend({'$\lambda$','$\hat{\lambda}$'},'interpreter','latex','fontsize',16)
 set(gca,'LooseInset',get(gca,'TightInset'));
-saveas(gcf,'E2_lambda.png')
+saveas(gcf,'E2_Lambda.png')
 
 % Error de Lambda
 lambdaI = interp1(t,x(:,13),tL);
@@ -80,7 +80,7 @@ title('Error de \lambda','fontsize',30)
 xlabel({'Tiempo $t$'},'Interpreter','latex','fontsize',20)
 ylabel({'$error$'},'Interpreter','latex','fontsize',20)
 set(gca,'LooseInset',get(gca,'TightInset'));
-saveas(gcf,'E2_errorlambda.png')
+saveas(gcf,'E2_ErrorLambda.png')
 
 
 %% Funciones
@@ -147,9 +147,4 @@ if t < 100
 else
   y = 0.3 + 0.2*sin((pi/25)*t);
 end
-end
-
-% Figuras del sistema Rossler con observador parcial
-function fig1(t,x,f)
-
 end
