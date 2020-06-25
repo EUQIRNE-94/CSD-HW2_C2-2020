@@ -1,5 +1,4 @@
 % Ejercicio 2 - Tarea 2
-
 close all
 clear
 clc

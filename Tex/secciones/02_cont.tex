@@ -1,5 +1,25 @@
 \section*{Desarrollo}
 \subsection*{Ejercicio 1}
+En este ejercicio, el sistema de Lorenz mostrado en la ecuación \ref{eq:lorenz} se le va a aplicar un filtro de Kalman para calcular las ganancias que permitan al observador de la ecuacion \ref{eq:lorenzobs} sincronizarse con el sistema. El sistema se encuentra alterado por ruido blanco tanto en los estados como en la salida, dichos ruidos se observan como $\epsilon_i \forall$ i = (1,2,3) y $v$.
+
+\begin{equation}\label{eq:lorenz}
+\begin{array}{c}
+\dot{x}_1 = \sigma ( x_2 - x_1 ) + \epsilon_1\\
+\dot{x}_2 = rx_1 - x_2 x_1x_3 + \epsilon_2\\
+\dot{x}_3 = -bx_3 + x_1x_2 + \epsilon_3\\
+y = x_3 + v
+\end{array}
+\end{equation}
+
+\begin{equation}\label{eq:lorenzobs}
+\begin{array}{c}
+\dot{\hat{x}}_1 = \sigma ( \hat{x}_2 - \hat{x}_1 ) + k_1(t)e_3\\
+\dot{\hat{x}}_2 = r\hat{x}_1 - \hat{x}_2 \hat{x}_1\hat{x}_3 + k(t)_2e_3\\
+\dot{\hat{x}}_3 = -b\hat{x}_3 + \hat{x}_1\hat{x}_2 + k(t)_3e_3\\
+\end{array}
+\end{equation}
+
+
 
 \subsubsection*{Pseudocódigo}
 

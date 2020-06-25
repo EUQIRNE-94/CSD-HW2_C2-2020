@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7440 64-bit) (preloaded format=pdflatex 2020.6.9)  9 JUN 2020 17:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7440 64-bit) (preloaded format=pdflatex 2020.6.16)  24 JUN 2020 22:07
 entering extended mode
 **./main.tex
 (main.tex
@@ -101,7 +101,7 @@ Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
 )
 ("C:\Users\Enrique Benavides\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdftex
 cmds\pdftexcmds.sty"
-Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
+Package: pdftexcmds 2020-06-04 v0.32 Utility functions of pdfTeX for LuaTeX (HO
 )
 
 ("C:\Users\Enrique Benavides\AppData\Local\Programs\MiKTeX 2.9\tex/generic/infw
@@ -643,11 +643,11 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 )
 ("C:\Users\Enrique Benavides\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babe
 l\babel.sty"
-Package: babel 2020/05/13 3.44 The Babel package
+Package: babel 2020/06/10 3.45 The Babel package
 
 ("C:\Users\Enrique Benavides\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babe
 l\babel.def"
-File: babel.def 2020/05/13 3.44 Babel common definitions
+File: babel.def 2020/06/10 3.45 Babel common definitions
 \babel@savecnt=\count288
 \U@D=\dimen197
 \l@babelnohyphens=\language79
@@ -683,8 +683,8 @@ File: l3backend-pdfmode.def 2020-06-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count291
 \l__pdf_internal_box=\box64
 ) (main.aux
-LaTeX Info: Redefining \. on input line 24.
-LaTeX Info: Redefining \% on input line 24.
+LaTeX Info: Redefining \. on input line 25.
+LaTeX Info: Redefining \% on input line 25.
 
 
 LaTeX Warning: Label `section:conclusion' multiply defined.
@@ -810,28 +810,140 @@ Package pdftex.def Info: img/Cinvestav-logo.png  used on input line 40.
  (secciones/01_abs.tex)
 (secciones/02_cont.tex
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 7.
+put line 27.
  [1
 
 {C:/Users/Enrique Benavides/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} 
 <./img/Cinvestav-logo.png>]) (secciones/05_conc.tex)
-[2] (main.bbl) [3
-
-] (secciones/06_ap.tex
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 9
+[2] (secciones/06_ap.tex
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 7
 .
 
 ("C:\Users\Enrique Benavides\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\t
 1cmtt.fd"
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)) [4
+)
+Overfull \hbox (35.64398pt too wide) in paragraph at lines 24--24
+[]\T1/cmtt/m/n/12 x = zeros(3,n);                                              
+               % Sistema[] 
+ []
+
+
+Overfull \hbox (128.24637pt too wide) in paragraph at lines 25--25
+[]\T1/cmtt/m/n/12 xg = zeros(3,n);                                             
+               % Observador del sistema[] 
+ []
+
+
+Overfull \hbox (103.5524pt too wide) in paragraph at lines 26--26
+[]\T1/cmtt/m/n/12 y = zeros(1,n);                                              
+               % Salida del sistema[] 
+ []
+
+
+Overfull \hbox (41.81747pt too wide) in paragraph at lines 27--27
+[]\T1/cmtt/m/n/12 xg_k = zeros(3,n);                                           
+               % x(k+1|k)[] 
+ []
+
+
+Overfull \hbox (47.99097pt too wide) in paragraph at lines 28--28
+[]\T1/cmtt/m/n/12 K = zeros(3,n);                                              
+               % Ganancias[] 
+ []
+
+
+Overfull \hbox (109.72589pt too wide) in paragraph at lines 29--29
+[]\T1/cmtt/m/n/12 P = zeros(3,3,n);                                            
+               % Error de covarianza[] 
+ []
+
+
+Overfull \hbox (189.9813pt too wide) in paragraph at lines 30--30
+[]\T1/cmtt/m/n/12 Q = zeros(3,3,n);                                            
+               % Matriz de covarianza del sistema[] 
+ []
+
+
+Overfull \hbox (134.41986pt too wide) in paragraph at lines 31--31
+[]\T1/cmtt/m/n/12 R = zeros(1,n);                                              
+               % Covarianza de la salida[] 
+ []
+
+
+Overfull \hbox (103.5524pt too wide) in paragraph at lines 32--32
+[]\T1/cmtt/m/n/12 eps = zeros(3,n);                                            
+               % Ruidos del proceso[] 
+ []
+
+
+Overfull \hbox (91.20541pt too wide) in paragraph at lines 33--33
+[]\T1/cmtt/m/n/12 v = zeros(1,n);                                              
+               % Ruido de lectura[] 
+ []
+
+
+Overfull \hbox (140.59335pt too wide) in paragraph at lines 34--34
+[]\T1/cmtt/m/n/12 e1 = zeros(1,n);                                             
+               % Error de variable medida[] 
+ []
+
+
+Overfull \hbox (91.20541pt too wide) in paragraph at lines 37--37
+[]\T1/cmtt/m/n/12 mu = 0;                                                      
+               % Centro del ruido[] 
+ []
+
+
+Overfull \hbox (41.81747pt too wide) in paragraph at lines 38--38
+[]\T1/cmtt/m/n/12 sig = 0.01;                                                  
+               % Varianza[] 
+ []
+
+[3
 
 ]
+Overfull \hbox (72.68494pt too wide) in paragraph at lines 66--66
+[]\T1/cmtt/m/n/12 F = [ 1-sigma*dt,sigma*dt,0 ; (r-x(3,k))*dt,1-dt,-x(1,k)*dt ;
+ x(2,k)*dt,x(1,k)*dt,1-b*dt ];[] 
+ []
+
+[4] [5] [6] [7] [8]
+Overfull \hbox (10.95001pt too wide) in paragraph at lines 314--314
+[]\T1/cmtt/m/n/12 %% Sistema Transmisor de Rossler con método de identificcion 
+de parametros lineal[] 
+ []
+
+[9] [10] [11] [12] [13] [14]
+Overfull \hbox (41.81747pt too wide) in paragraph at lines 619--619
+[]\T1/cmtt/m/n/12 dx(10) = eta1 + k2*eta2 - ( k1 + k2*k2 + 1 )*y_nc + k2*(4*exp
+(-y_nc) - 2) - exp(y_nc);[] 
+ []
+
+
+Overfull \hbox (23.297pt too wide) in paragraph at lines 632--632
+[]\T1/cmtt/m/n/12 dx(12) = k1*eta2_g - k1*k2*y_ncg + (k1 + 1)*(4*exp(-y_nc) - 2
+) + l1*(y_ncg - y_nc);[] 
+ []
+
+
+Overfull \hbox (196.15479pt too wide) in paragraph at lines 633--633
+[]\T1/cmtt/m/n/12 dx(13) = eta1_g + k2*eta2_g - ( k1 + k2*k2 + 1 )*y_ncg + k2*(
+4*exp(-y_nc) - 2) - exp(y_nc) + l2*(y_ncg - y_nc);[] 
+ []
+
+
+Overfull \hbox (41.81747pt too wide) in paragraph at lines 634--634
+[]\T1/cmtt/m/n/12 dx(14) = eta2_g + k2*y_ncg + 4*exp(-y_nc) - 2 + teta*(E2f + y
+_nc) + l3*(y_ncg - y_nc);[] 
+ []
+
+) [15]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 56.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 56.
  (main.aux
-LaTeX Info: Redefining \. on input line 24.
-LaTeX Info: Redefining \% on input line 24.
+LaTeX Info: Redefining \. on input line 25.
+LaTeX Info: Redefining \% on input line 25.
 )
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 56.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 56.
@@ -844,40 +956,38 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 56.
  ) 
 Here is how much of TeX's memory you used:
- 17768 strings out of 480797
- 335501 string characters out of 2889946
- 597118 words of memory out of 3000000
- 33370 multiletter control sequences out of 15000+200000
- 547576 words of font info for 58 fonts, out of 3000000 for 9000
+ 17724 strings out of 480797
+ 333731 string characters out of 2889945
+ 602560 words of memory out of 3000000
+ 33322 multiletter control sequences out of 15000+200000
+ 546206 words of font info for 56 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 59i,6n,75p,947b,600s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 59i,10n,75p,947b,602s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Enrique Benavides\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappe
 n/ec/dpi600\ectt1200.pk> <C:\Users\Enrique Benavides\AppData\Local\MiKTeX\2.9\f
 onts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk> <C:\Users\Enrique Benavides\AppD
-ata\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecti0800.pk> <C:\Users\
+ata\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\
 Enrique Benavides\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\e
-cti1200.pk> <C:\Users\Enrique Benavides\AppData\Local\MiKTeX\2.9\fonts/pk/ljfou
-r/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\Enrique Benavides\AppData\Local\MiK
-TeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\Enrique Benav
-ides\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <
+crm1200.pk> <C:\Users\Enrique Benavides\AppData\Local\MiKTeX\2.9\fonts/pk/ljfou
+r/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\Enrique Benavides\AppData\Local\MiK
+TeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\Enrique Benav
+ides\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <
 C:\Users\Enrique Benavides\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec
-/dpi600\ecrm1200.pk> <C:\Users\Enrique Benavides\AppData\Local\MiKTeX\2.9\fonts
-/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\Enrique Benavides\AppData\
-Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\Enri
-que Benavides\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1
-095.pk> <C:\Users\Enrique Benavides\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jk
-nappen/ec/dpi600\ecrm1440.pk> <C:\Users\Enrique Benavides\AppData\Local\MiKTeX\
-2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2074.pk><C:/Users/Enrique Benavides/
-AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:
-/Users/Enrique Benavides/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmmi12.pfb><C:/Users/Enrique Benavides/AppData/Local/Programs/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Enrique Benavides/AppDa
-ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users
-/Enrique Benavides/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmsy10.pfb>
-Output written on main.pdf (4 pages, 199453 bytes).
+/dpi600\ecbx1095.pk> <C:\Users\Enrique Benavides\AppData\Local\MiKTeX\2.9\fonts
+/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\Enrique Benavides\AppData\
+Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\Enri
+que Benavides\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2
+074.pk><C:/Users/Enrique Benavides/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Enrique Benavides/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Enrique Bena
+vides/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pf
+b><C:/Users/Enrique Benavides/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmr12.pfb><C:/Users/Enrique Benavides/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Enrique Benavides/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on main.pdf (15 pages, 238372 bytes).
 PDF statistics:
- 382 PDF objects out of 1000 (max. 8388607)
- 34 named destinations out of 1000 (max. 500000)
+ 476 PDF objects out of 1000 (max. 8388607)
+ 43 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

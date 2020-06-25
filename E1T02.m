@@ -1,13 +1,9 @@
 % Ejercicio 1 - Tarea 2
-
 close all
 clear
 clc
 
 %% Sistema de Lorenz sujeto a ruido blanco en proceso y medición
-%             Filtro de kalman extendido
-%  randn()            --- Distribucion normal con media = 1 y varianza = 1
-%  mu + sigma*randn() --- Distribucion normal con media = mu y varianza = sigma
 
 % Tiempo de simulación
 tf = 5;
@@ -122,8 +118,8 @@ xlabel({'Tiempo $t$'},'Interpreter','latex','fontsize',20)
 ylabel({'$x_3$'},'Interpreter','latex','fontsize',20)
 legend({'Sistema','Observador',},'fontsize',16)
 
-set(gca,'LooseInset',get(gca,'TightInset'));
-saveas(gcf,'E1_Estados_Disc.png')
+% set(gca,'LooseInset',get(gca,'TightInset'));
+% saveas(gcf,'E1_Estados_Disc.png')
 
 % Errores
 figure(2)
@@ -136,8 +132,8 @@ xlabel({'Tiempo $t$'},'Interpreter','latex','fontsize',20)
 ylabel({'$e_i$'},'Interpreter','latex','fontsize',20)
 legend({'e_1','e_2','e_3'},'fontsize',16)
 
-set(gca,'LooseInset',get(gca,'TightInset'));
-saveas(gcf,'E1_Errores_Disc.png')
+% set(gca,'LooseInset',get(gca,'TightInset'));
+% saveas(gcf,'E1_Errores_Disc.png')
 
 % Retrato Fase
 figure(3)
@@ -150,8 +146,8 @@ ylabel({'$x_2$'},'Interpreter','latex','fontsize',20)
 zlabel({'$x_3$'},'Interpreter','latex','fontsize',20)
 legend({'Sistema','Observador',},'fontsize',16)
 
-set(gca,'LooseInset',get(gca,'TightInset'));
-saveas(gcf,'E1_RetratoFase_Disc.png')
+% set(gca,'LooseInset',get(gca,'TightInset'));
+% saveas(gcf,'E1_RetratoFase_Disc.png')
 
 %% Figuras sistema continuo
 figure(4)
@@ -183,8 +179,8 @@ xlabel({'Tiempo $t$'},'Interpreter','latex','fontsize',20)
 ylabel({'$x_3$'},'Interpreter','latex','fontsize',20)
 legend({'Sistema','Observador',},'fontsize',16)
 
-set(gca,'LooseInset',get(gca,'TightInset'));
-saveas(gcf,'E1_Estados_Cont.png')
+% set(gca,'LooseInset',get(gca,'TightInset'));
+% saveas(gcf,'E1_Estados_Cont.png')
 
 % Errores
 e1L = x_L(:,1) - x_L(:,4);
@@ -201,8 +197,8 @@ xlabel({'Tiempo $t$'},'Interpreter','latex','fontsize',20)
 ylabel({'$e_i$'},'Interpreter','latex','fontsize',20)
 legend({'e_1','e_2','e_3'},'fontsize',16)
 
-set(gca,'LooseInset',get(gca,'TightInset'));
-saveas(gcf,'E1_Errores_Cont.png')
+% set(gca,'LooseInset',get(gca,'TightInset'));
+% saveas(gcf,'E1_Errores_Cont.png')
 
 % Retrato Fase
 figure(6)
@@ -215,8 +211,8 @@ ylabel({'$x_2$'},'Interpreter','latex','fontsize',20)
 zlabel({'$x_3$'},'Interpreter','latex','fontsize',20)
 legend({'Sistema','Observador',},'fontsize',16)
 
-set(gca,'LooseInset',get(gca,'TightInset'));
-saveas(gcf,'E1_RetratoFase_Cont.png')
+% set(gca,'LooseInset',get(gca,'TightInset'));
+% saveas(gcf,'E1_RetratoFase_Cont.png')
 
 %% Funciones
 % FKE
