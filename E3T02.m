@@ -65,7 +65,7 @@ figure(3)
 set(gcf, 'Position', get(0, 'Screensize'));
 subplot(3,1,1)
 plot(t,x(:,9),'k','linewidth',2);hold on
-plot(t,x(:,12),'r','linewidth',1)
+plot(t,x(:,12),'g','linewidth',1)
 title({'$\eta_1 \ / \ \hat{\eta}_1$'},'Interpreter','latex','fontsize',30)
 xlabel('Tiempo [t]')
 ylabel('Uds')
@@ -73,7 +73,7 @@ legend({'$\eta_1$','$\hat{\eta}_1$'},'interpreter','latex','Fontsize',16)
 
 subplot(3,1,2)
 plot(t,x(:,10),'k','linewidth',2);hold on
-plot(t,x(:,13),'r','linewidth',1);
+plot(t,x(:,13),'g','linewidth',1);
 title({'$\eta_1 \ / \ \hat{\eta}_1$'},'Interpreter','latex','fontsize',30)
 xlabel('Tiempo [t]')
 ylabel('Uds')
@@ -82,7 +82,7 @@ legend({'$\eta_1$','$\hat{\eta}_1$'},'interpreter','latex','Fontsize',16)
 
 subplot(3,1,3)
 plot(t,x(:,11),'k','linewidth',2);hold on
-plot(t,x(:,14),'r','linewidth',1);
+plot(t,x(:,14),'g','linewidth',1);
 title({'$y \ / \ \hat{y}$'},'Interpreter','latex','fontsize',30)
 xlabel('Tiempo [t]')
 ylabel('Uds')

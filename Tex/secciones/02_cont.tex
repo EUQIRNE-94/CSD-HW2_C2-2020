@@ -61,7 +61,7 @@ En donde se debe definir $P(0) > 0$ para su funcionamiento.
 
 \subsubsection*{Resultados}
 
-La simulación del ejercicio se realizó por medio de Matlab y se utilizaron los dos métodos del filtro estendido de Kalman mostrados en (\ref{eq_kalmandisc}) y (\ref{eq_kalmancont}). En el caso del filtro discreto se observa el siguiente retrato fase:
+La simulación del ejercicio se realizó por medio de Matlab y se utilizaron los dos métodos del filtro extendido de Kalman mostrados en (\ref{eq_kalmandisc}) y (\ref{eq_kalmancont}). En el caso del filtro discreto se observa el siguiente retrato fase:
 
 \begin{figure}[H]
 	\centering
@@ -70,7 +70,7 @@ La simulación del ejercicio se realizó por medio de Matlab y se utilizaron los
 	\label{img:lorenzD1}
 \end{figure}
 
-El sistema de Lorenz se simuló con los siguientes parametros: $\sigma = 10, \ r = 28, \ b = 8/3$.La progresión de los estados en el tiempo se observan en la siguiente figura:
+El sistema de Lorenz se simuló con los siguientes parámetros: $\sigma = 10, \ r = 28, \ b = 8/3$.La progresión de los estados en el tiempo se observan en la siguiente figura:
 
 \begin{figure}[H]
 	\centering
@@ -97,7 +97,7 @@ Con la simulación de forma continua se obtuvo el siguiente retrato fase:
 	\label{img:lorenzD4}
 \end{figure}
 
-El sistema fue simulado con los mismos paramteros que la simulación discreta. La progresión de los estados en el tiempo se observan en la siguiente figura:
+El sistema fue simulado con los mismos parámetros que la simulación discreta. La progresión de los estados en el tiempo se observan en la siguiente figura:
 
 \begin{figure}[H]
 	\centering
@@ -117,7 +117,7 @@ En base a la figura anterior (\ref{img:lorenzD5}), se obtuvieron los errores del
 
 \subsection*{Ejercicio 2}
 
-En este ejercicio se utiliza el sistema de Rossler (ecuación \ref{eq:rossler}) al cual se le aplica una señal constante y/o de variacion lenta en el tiempo en el valor de $\lambda$. Esta señal es enviada de manera encriptada dentro del sistema por medio de la salida $y$.
+En este ejercicio se utiliza el sistema de Rossler (ecuación \ref{eq:rossler}) al cual se le aplica una señal constante y/o de variación lenta en el tiempo en el valor de $\lambda$. Esta señal es enviada de manera encriptada dentro del sistema por medio de la salida $y$.
 
 \begin{equation}\label{eq:rossler}
 	\begin{array}{c}
@@ -137,16 +137,16 @@ Para recrear la señal $\lambda$ es necesario que se pueda hacer un observador e
 	\end{array}
 \end{equation}
 
-\begin{equation}
+\begin{equation}\label{eq:rosslercambiocoord}
 	\begin{array}{c}
-		\dot{x}_1 = -\xi_2 - \xi_3\\
-		\dot{x}_2 = \xi_1 + \lambda \xi_2\\
-		\dot{x}_3 = \xi_1 + 2e^{-\xi_3} - 4\\
+		\dot{\xi}_1 = -\xi_2 - \xi_3\\
+		\dot{\xi}_2 = \xi_1 + \lambda \xi_2\\
+		\dot{\xi}_3 = \xi_1 + 2e^{-\xi_3} - 4\\
 		\bar{y} = \xi_3
 	\end{array}
 \end{equation}
 
-Con este cambio de coordenadas el observador puede sincronizarse y por lo tanto se puede utilizar en el método de identificación lineal de parametros para reconstruir la señal $\lambda$. Para realizar este proceso se deben de cumplir las siguientes ecuaciones:
+Con este cambio de coordenadas el observador puede sincronizarse y por lo tanto se puede utilizar en el método de identificación lineal de parámetros para reconstruir la señal $\lambda$. Para realizar este proceso se deben de cumplir las siguientes ecuaciones:
 
 \begin{equation}\label{eq:idlinpar}
 	\begin{array}{c}
@@ -195,7 +195,7 @@ En la figura \ref{img:rossler1} se observa el retrato fase del sistema. Donde se
 	\label{img:rossler2}
 \end{figure}
 
-En la figura \ref{img:rossler3} se observa como la señal recuperada $\hat{\lambda}$ se acerca a la señal $\lambda$ original. Cuando la señal es constante la señal se recupera en poco tiempo (aproximadamente 5s) y la señal con cambios lentos mantiene un cierto nivel de error,se puede observar en la figure \ref{img:rossler4}, pero mantiene la forma general de la señal $\lambda$.
+En la figura \ref{img:rossler3} se observa como la señal recuperada $\hat{\lambda}$ se acerca a la señal $\lambda$ original. Cuando la señal es constante la señal se recupera en poco tiempo (aproximadamente 5s) y la señal con cambios lentos mantiene un cierto nivel de error, se puede observar en la figure \ref{img:rossler4}, pero mantiene la forma general de la señal $\lambda$.
 
 \begin{figure}[H]
 	\centering
@@ -213,14 +213,94 @@ En la figura \ref{img:rossler3} se observa como la señal recuperada $\hat{\lamb
 
 \subsection*{Ejercicio 3}
 
+En el ejercicio tres se utiliza el mismo sistema de Rossler de la ecuación \ref{eq:rossler} al cual se le va a aplicar un observador adaptable para la sincronización en comunicación. Este observador funciona solamente si el sistema transmisor cuenta con la siguiente forma:
+
+\begin{equation}\label{eq:formalureadap}
+	\begin{array}{l}
+		\dot{x}_d = Ax_d + \phi_0(y_d) + B \sum_{i=1}^{m} \theta_i \phi_i(y_d)\\
+		yd = Cx_d
+	\end{array}
+\end{equation}
+
+El observador propuesto para la forma anterior se define como:
+
+\begin{equation}\label{eq:obsadap}
+	\begin{array}{l}
+		\dot{x} = Ax + \phi_0(y_d) + B \left[ \sum_{i=1}^{m} \hat{\theta}_i \phi_i(y_d) + \hat{\theta}_0 G(yd - y) \right]\\
+		y = Cx\\
+		\dot{\hat{\theta}}_i = \chi_i(y_d,y), i = 1,2,\dots,m
+	\end{array}
+\end{equation}
+
+Y observando la ecuación anterior, el sistema de Rossler no cumple con las características. Para esto se realiza un tercer cambio de coordenadas a los resultados de la ecuación \ref{eq:rosslercambiocoord} de la siguiente forma:
+
+\begin{equation}
+	\begin{array}{l}
+		z = Q(\lambda)\xi \\
+		q(\lambda) = \begin{Bmatrix}
+			\lambda & -1 & 1\\
+			1 & 0 & \lambda\\
+			0 & 0 & 1
+		\end{Bmatrix}
+	\end{array}
+\end{equation}
+
+Con este cambio de coordenadas al ser derivado respecto al tiempo se obtiene el siguiente sistema el cual ya cumple con la forma de la ecuación \ref{eq:formalureadap} y se tiene:
+
+\begin{equation}
+	\begin{array}{l}
+		\dot{z}_1 = 4e^{-\bar{y}} - 2 + \lambda e^{\bar{y}}\\
+		\dot{x}_2 = z_1 - z_3 - e^{\bar{y}} + \lambda (2-4e^{-\bar{y}})\\
+		\dot{z}_3 = z_2 + 4e^{-\bar{y}} - 2 + \lambda \bar{y}
+		y_z = [0 0 1]\bm z
+	\end{array}
+\end{equation}
+
+Para poder encontrar de manera efectiva la señal $\lambda$ transmitida, se filtran las señales de $\xi_1$ y $\xi_2$ en la ecuación \ref{xifiltrada}.
+
+\begin{equation}\label{xifiltrada}
+	\begin{array}{l}
+		\dot{\hat{\xi}}_1 = k_1 \hat{\xi}_2 + k1\bar{y} + e^{\bar{y}}\\
+		\dot{\hat{\xi}}_2 = \hat{\xi}_1 + k_2 \hat{\xi}_2 + k_2 \bar{y} -4e^{\bar{y}} + 2\\
+	\end{array}
+\end{equation}
+
+Lo cual nos permite reescribir el sistema en términos de $\bm z$ y de las nuevas coordenadas $\xi$ filtradas obteniendo el siguiente sistema:
+
+\begin{equation}\label{eq:nuevorossler}
+	\begin{array}{l}
+		\dot{\eta}_1 = k_1 \eta_2 - k_1k_2 y_\eta + (k_1 + 1)(4e^{-y_\eta}-2)\\
+		\dot{\eta}_2 = \eta_1 + k_2 \eta_2 - (k_1 + K_2^2 + 1)y_\eta + k_2(4e^{-y_\eta} - 2) - e^{y_\eta}\\
+		\dot{y}_\eta = \eta_2 + k_2y_\eta + 4e^{-y_\eta} - 2 + \lambda(\hat{\xi}_2 + y_\eta)
+	\end{array}
+\end{equation}
+
+El cual tiene la forma de la ecuación \ref{eq:obsadap} y ademas permite definir el observador adaptable de la ecuación \ref{eq:obsadap} como:
+
+\begin{equation}\label{eq:nuevorosslerobs}
+	\begin{array}{l}
+		\dot{\hat{\eta}}_1 = k_1 \hat{\eta}_2 - k_1k_2\hat{y}_\eta + (k_1+1)(4e^{-\hat{y}_\eta}-2) + l_1(\hat{y}_\eta - y_\eta)\\
+		\dot{\hat{\eta}}_2 = \hat{\eta}_1 + k_2 \hat{\eta}_2 - (k_1 + K_2^2 + 1)\hat{y}_\eta + k_2(4e^{-\hat{y}_\eta} - 2) - e^{\hat{y}_\eta} + l_2(\hat{y}_\eta - y_\eta)\\
+		\dot{\hat{y}}_\eta = \hat{\eta}_2 + k_2\hat{y}_\eta + 4e^{-\hat{y}_\eta} - 2 + \hat{\lambda}(\hat{\xi}_2 + \hat{y}_\eta) + l_3(\hat{y}_\eta - y_\eta)\\
+		\hat{\lambda} = \hat{\theta}\\
+		\dot{\hat{\theta}} = -\gamma(\hat{\xi}_2 + y_\eta)(\hat{y_\eta} - y_\eta)
+	\end{array}
+\end{equation}
+
+Con el sistema de la ecuación \ref{eq:nuevorossler} y su observador \ref{eq:nuevorosslerobs} es posible recrear la señal $\lambda$ de inicio.\\
 
 \subsubsection*{Resultados}
+
+Observando los estados en el tiempo, el observador sigue al sistema. Sin embargo las ganancias de $k_1$ y $k_2$ así como las de $l_1$, $l_2$ y $l_3$ influyen en el estado de $y_\eta$ el cual se  puede observar tiene variaciones a lo largo del tiempo. Se observa un rizo alrededor de la señal base.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=150mm]{img/E3_Estados.png}
 	\caption{Progresión de los estados en el tiempo}
 	\label{img:rossler5}
 \end{figure}
+
+En la reconstrucción de $\lambda$ se observa que debido al ruido del observador en el estado de $y_\eta$ genera un ruido alrededor de la señal de referencia.
 
 \begin{figure}[H]
 	\centering

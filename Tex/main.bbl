@@ -1,18 +1,20 @@
 \begin{thebibliography}{1}
 
-\bibitem{einstein}
-Albert Einstein.
-\newblock {Zur Elektrodynamik bewegter K{\"o}rper}. ({German}) [{On} the
-  electrodynamics of moving bodies].
-\newblock {\em Annalen der Physik}, 322(10):891--921, 1905.
+\bibitem{003}
+Alexander Fradkov and Henk Nijmeijer.
+\newblock Adaptive observer-based synchronization for communication.
+\newblock {\em International Journal of Bifurcation and Chaos}, 10:2807--2813,
+  12 2000.
 
-\bibitem{latexcompanion}
-Michel Goossens, Frank Mittelbach, and Alexander Samarin.
-\newblock {\em The \LaTeX\ Companion}.
-\newblock Addison-Wesley, Reading, Massachusetts, 1993.
+\bibitem{001}
+H.~{Huijberts}, H.~{Nijmeijer}, and R.~{Willems}.
+\newblock System identification in communication with chaotic systems.
+\newblock {\em IEEE Transactions on Circuits and Systems I: Fundamental Theory
+  and Applications}, 47(6):800--808, 2000.
 
-\bibitem{knuthwebsite}
-Donald Knuth.
-\newblock Knuth: Computers and typesetting.
+\bibitem{002}
+Henk Nijmeijer.
+\newblock A dynamical control view on synchronization.
+\newblock {\em Physica D: Nonlinear Phenomena}, 154:219--228, 06 2001.
 
 \end{thebibliography}

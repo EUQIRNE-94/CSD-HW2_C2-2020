@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7440 64-bit) (preloaded format=pdflatex 2020.6.16)  25 JUN 2020 19:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7440 64-bit) (preloaded format=pdflatex 2020.6.16)  26 JUN 2020 13:35
 entering extended mode
 **./main.tex
 (main.tex
@@ -641,6 +641,15 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 \ALC@tlm=\skip53
 \algorithmicindent=\skip54
 )
+("C:\Users\Enrique Benavides\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\
+bm.sty"
+Package: bm 2019/07/24 v1.2d Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup4
+\symboldletters=\mathgroup5
+\symboldsymbols=\mathgroup6
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
+LaTeX Info: Redefining \bm on input line 209.
+)
 ("C:\Users\Enrique Benavides\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babe
 l\babel.sty"
 Package: babel 2020/06/10 3.45 The Babel package
@@ -688,22 +697,22 @@ LaTeX Info: Redefining \% on input line 25.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -771,7 +780,7 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 504.
 )
 \AtBeginShipoutBox=\box66
-Package hyperref Info: Link coloring OFF on input line 38.
+Package hyperref Info: Link coloring OFF on input line 39.
 
 ("C:\Users\Enrique Benavides\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperr
 ef\nameref.sty"
@@ -787,21 +796,21 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count298
 )
-LaTeX Info: Redefining \ref on input line 38.
-LaTeX Info: Redefining \pageref on input line 38.
-LaTeX Info: Redefining \nameref on input line 38.
+LaTeX Info: Redefining \ref on input line 39.
+LaTeX Info: Redefining \pageref on input line 39.
+LaTeX Info: Redefining \nameref on input line 39.
  (main.out) (main.out)
 \@outlinefile=\write6
 \openout6 = `main.out'.
 
 
 ABD: EveryShipout initializing macros
-LaTeX Info: Redefining \. on input line 38.
-LaTeX Info: Redefining \% on input line 38.
+LaTeX Info: Redefining \. on input line 39.
+LaTeX Info: Redefining \% on input line 39.
 <img/Cinvestav-logo.png, id=6, 355.90251pt x 382.77678pt>
 File: img/Cinvestav-logo.png Graphic file (type png)
 <use img/Cinvestav-logo.png>
-Package pdftex.def Info: img/Cinvestav-logo.png  used on input line 40.
+Package pdftex.def Info: img/Cinvestav-logo.png  used on input line 41.
 (pdftex.def)             Requested size: 142.26378pt x 153.0087pt.
  (secciones/01_abs.tex)
 (secciones/02_cont.tex [1
@@ -923,34 +932,38 @@ l.213
                                                   \fi \fi 
 l.213 
        <./img/E2_Estados.png (PNG copy)> <./img/E2_Lambda.png (PNG copy)>]
-<img/E3_Estados.png, id=106, 1445.4pt x 757.8714pt>
-File: img/E3_Estados.png Graphic file (type png)
-<use img/E3_Estados.png>
-Package pdftex.def Info: img/E3_Estados.png  used on input line 220.
-(pdftex.def)             Requested size: 426.79134pt x 223.77827pt.
-<img/E3_Lambda.png, id=107, 1445.4pt x 757.8714pt>
-File: img/E3_Lambda.png Graphic file (type png)
-<use img/E3_Lambda.png>
-Package pdftex.def Info: img/E3_Lambda.png  used on input line 227.
-(pdftex.def)             Requested size: 426.79134pt x 223.77827pt.
-
 [8pdfTeX warning (ext4): destination with the same identifier (name{figure.10})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.231 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-11}) has been already used, duplicate ignored
+l.266 \end{equation}
+                     <./img/E2_ErrorLambda.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 290--291
+
+ []
+
+<img/E3_Estados.png, id=124, 1445.4pt x 757.8714pt>
+File: img/E3_Estados.png Graphic file (type png)
+<use img/E3_Estados.png>
+Package pdftex.def Info: img/E3_Estados.png  used on input line 298.
+(pdftex.def)             Requested size: 426.79134pt x 223.77827pt.
+<img/E3_Lambda.png, id=125, 1445.4pt x 757.8714pt>
+File: img/E3_Lambda.png Graphic file (type png)
+<use img/E3_Lambda.png>
+Package pdftex.def Info: img/E3_Lambda.png  used on input line 307.
+(pdftex.def)             Requested size: 426.79134pt x 223.77827pt.
+[9pdfTeX warning (ext4): destination with the same identifier (name{figure.11})
+ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.231 
-       <./img/E2_ErrorLambda.png (PNG copy)> <./img/E3_Estados.png (PNG copy)>]
-<img/E3_ErrorLambda.png, id=115, 1445.4pt x 757.8714pt>
+l.311 
+       <./img/E3_Estados.png (PNG copy)>]
+<img/E3_ErrorLambda.png, id=136, 1445.4pt x 757.8714pt>
 File: img/E3_ErrorLambda.png Graphic file (type png)
 <use img/E3_ErrorLambda.png>
-Package pdftex.def Info: img/E3_ErrorLambda.png  used on input line 234.
+Package pdftex.def Info: img/E3_ErrorLambda.png  used on input line 314.
 (pdftex.def)             Requested size: 426.79134pt x 223.77827pt.
 ) (secciones/05_conc.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
@@ -962,8 +975,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
  []
 
-[9pdfTeX warning (ext4): destination with the same identifier (name{figure.12})
- has been already used, duplicate ignored
+[10pdfTeX warning (ext4): destination with the same identifier (name{figure.12}
+) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -981,22 +994,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--8
 
  []
 
-) [10] (secciones/06_ap.tex
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+
+ []
+
+) [11] (main.bbl) [12
+
+] (secciones/06_ap.tex
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 7
 .
 
 ("C:\Users\Enrique Benavides\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\t
 1cmtt.fd"
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [11
+) [13
 
-] [12] [13] [14] [15] [16]
+] [14] [15] [16] [17] [18]
 Overfull \hbox (10.95001pt too wide) in paragraph at lines 316--316
 []\T1/cmtt/m/n/12 %% Sistema Transmisor de Rossler con método de identificcion 
 de parametros lineal[] 
  []
 
-[17] [18] [19] [20] [21] [22]
+[19] [20] [21] [22] [23] [24]
 Overfull \hbox (41.81747pt too wide) in paragraph at lines 621--621
 []\T1/cmtt/m/n/12 dx(10) = eta1 + k2*eta2 - ( k1 + k2*k2 + 1 )*y_nc + k2*(4*exp
 (-y_nc) - 2) - exp(y_nc);[] 
@@ -1014,56 +1034,60 @@ Overfull \hbox (41.81747pt too wide) in paragraph at lines 637--637
 _nc) + l3*(y_ncg - y_nc);[] 
  []
 
-) [23]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 56.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 56.
+) [25]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 57.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 57.
  (main.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 56.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 56.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 57.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 57.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 56.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 57.
  ) 
 Here is how much of TeX's memory you used:
- 17801 strings out of 480797
- 335656 string characters out of 2889945
- 600343 words of memory out of 3000000
- 33373 multiletter control sequences out of 15000+200000
- 546206 words of font info for 56 fonts, out of 3000000 for 9000
+ 17933 strings out of 480797
+ 337268 string characters out of 2889945
+ 602056 words of memory out of 3000000
+ 33472 multiletter control sequences out of 15000+200000
+ 553341 words of font info for 78 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  59i,12n,75p,947b,476s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Enrique Benavides\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappe
 n/ec/dpi600\ectt1200.pk> <C:\Users\Enrique Benavides\AppData\Local\MiKTeX\2.9\f
 onts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk> <C:\Users\Enrique Benavides\AppD
-ata\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\
+ata\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\
 Enrique Benavides\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\e
-crm1200.pk> <C:\Users\Enrique Benavides\AppData\Local\MiKTeX\2.9\fonts/pk/ljfou
-r/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\Enrique Benavides\AppData\Local\MiK
-TeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\Enrique Benav
-ides\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <
+cbx1200.pk> <C:\Users\Enrique Benavides\AppData\Local\MiKTeX\2.9\fonts/pk/ljfou
+r/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\Enrique Benavides\AppData\Local\MiK
+TeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\Enrique Benav
+ides\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <
 C:\Users\Enrique Benavides\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec
-/dpi600\ecbx1095.pk> <C:\Users\Enrique Benavides\AppData\Local\MiKTeX\2.9\fonts
-/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\Enrique Benavides\AppData\
-Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\Enri
-que Benavides\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2
-074.pk><C:/Users/Enrique Benavides/AppData/Local/Programs/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmex10.pfb><C:/Users/Enrique Benavides/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Enrique Bena
-vides/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.p
-fb><C:/Users/Enrique Benavides/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmmi8.pfb><C:/Users/Enrique Benavides/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Enrique Benavides/
-AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/U
-sers/Enrique Benavides/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmr8.pfb><C:/Users/Enrique Benavides/AppData/Local/Programs/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Enrique Benavides/AppData/
-Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (23 pages, 2072319 bytes).
+/dpi600\ecti1095.pk> <C:\Users\Enrique Benavides\AppData\Local\MiKTeX\2.9\fonts
+/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\Enrique Benavides\AppData\
+Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\Enri
+que Benavides\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1
+440.pk> <C:\Users\Enrique Benavides\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jk
+nappen/ec/dpi600\ecrm2074.pk><C:/Users/Enrique Benavides/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Enrique Benavid
+es/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+<C:/Users/Enrique Benavides/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmmi12.pfb><C:/Users/Enrique Benavides/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Enrique Benavides/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Us
+ers/Enrique Benavides/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmmib10.pfb><C:/Users/Enrique Benavides/AppData/Local/Programs/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Enrique Benavides/AppData
+/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/En
+rique Benavides/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmr8.pfb><C:/Users/Enrique Benavides/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Enrique Benavides/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on main.pdf (25 pages, 2118707 bytes).
 PDF statistics:
- 560 PDF objects out of 1000 (max. 8388607)
- 56 named destinations out of 1000 (max. 500000)
+ 646 PDF objects out of 1000 (max. 8388607)
+ 69 named destinations out of 1000 (max. 500000)
  83 words of extra memory for PDF output out of 10000 (max. 10000000)
 
